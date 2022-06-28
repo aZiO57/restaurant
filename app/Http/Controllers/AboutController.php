@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreFeedbackRequest;
-use App\Models\Feedback;
 use Illuminate\Http\Request;
 
-class FeedbackController extends Controller
+class AboutController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,8 +23,7 @@ class FeedbackController extends Controller
      */
     public function create()
     {
-        $data['feedback'] = Feedback::all();
-        return view('general.feedback', $data);
+        //
     }
 
     /**
@@ -35,15 +32,9 @@ class FeedbackController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreFeedbackRequest $request)
+    public function store(Request $request)
     {
-        $feedback = new Feedback();
-        $feedback->name = $request->post('name');
-        $feedback->message = $request->post('message');
-        $feedback->rating = $request->post('rating');
-
-        $feedback->save();
-        return redirect()->route('home');
+        //
     }
 
     /**
@@ -52,12 +43,9 @@ class FeedbackController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($feedback)
+    public function show($id)
     {
-        $data['feedback'] = $feedback;
-        $feedback->save();
-
-        return view('feedback.show', $data);
+        //
     }
 
     /**

@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreBookingRequest;
+use App\Http\Requests\UpdateBookingRequest;
 use App\Models\Booking;
+use App\Models\Table;
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
@@ -14,7 +17,9 @@ class BookingController extends Controller
      */
     public function index()
     {
-        //
+        $data['bookings'] = Booking::paginate(42);
+
+        return view('bookings.list', $data);
     }
 
     /**
@@ -24,7 +29,8 @@ class BookingController extends Controller
      */
     public function create()
     {
-        return view('bookings.form');
+        $data['tables'] = Table::all();
+        return view('bookings.form', $data);
     }
 
     /**
@@ -33,17 +39,19 @@ class BookingController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreBookingRequest $request)
     {
         $booking = new Booking();
         $booking->name = $request->post('name');
         $booking->date = $request->post('date');
         $booking->time = $request->post('time');
+        $booking->phone_number = $request->post('phone_number');
         $booking->email = $request->post('email');
         $booking->comment = $request->post('comment');
         $booking->table_id = $request->post('table_id');
 
         $booking->save();
+        return redirect()->route('home');
     }
 
     /**
@@ -52,9 +60,11 @@ class BookingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(int $id)
     {
-        //
+        $data['booking'] = Booking::find($id);
+
+        return view('bookings.single', $data);
     }
 
     /**
@@ -63,7 +73,7 @@ class BookingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Booking $booking)
     {
         //
     }
@@ -75,16 +85,18 @@ class BookingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Booking $booking)
+    public function update(UpdateBookingRequest $request, Booking $booking)
     {
         $booking->name = $request->post('name');
         $booking->date = $request->post('date');
         $booking->time = $request->post('time');
         $booking->email = $request->post('email');
+        $booking->phone_number = $request->post('phone_number');
         $booking->comment = $request->post('comment');
-        $booking->table_id = $request->post('table_id');
+        $booking->table_id = 1;
 
         $booking->save();
+        return redirect()->route('home');
     }
 
     /**

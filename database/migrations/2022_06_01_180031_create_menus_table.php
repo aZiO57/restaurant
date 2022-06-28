@@ -21,6 +21,7 @@ return new class extends Migration
             $table->longText('image');
             $table->integer('category_id');
             $table->timestamps();
+            $table->boolean('enable');
         });
     }
 
