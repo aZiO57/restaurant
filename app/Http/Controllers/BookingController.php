@@ -93,7 +93,7 @@ class BookingController extends Controller
         $booking->email = $request->post('email');
         $booking->phone_number = $request->post('phone_number');
         $booking->comment = $request->post('comment');
-        $booking->table_id = 1;
+        $booking->table_id = $request->post('table_id');
 
         $booking->save();
         return redirect()->route('home');

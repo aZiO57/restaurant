@@ -13,7 +13,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        return view('general.contacts');
     }
 
     /**
@@ -45,7 +45,7 @@ class ContactController extends Controller
      */
     public function show()
     {
-        return view('general.contacts');
+        //
     }
 
 

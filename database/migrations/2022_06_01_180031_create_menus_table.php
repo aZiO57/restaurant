@@ -18,10 +18,10 @@ return new class extends Migration
             $table->string('name');
             $table->float('price');
             $table->longText('description');
-            $table->longText('image');
+            $table->string('image')->nullable();
             $table->integer('category_id');
+            $table->boolean('enable')->default(1);
             $table->timestamps();
-            $table->boolean('enable');
         });
     }
 

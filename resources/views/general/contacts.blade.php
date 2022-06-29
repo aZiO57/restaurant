@@ -11,15 +11,18 @@
                 </div>
         <div class="footer-workhours">
             <p><strong><i class="clock"></i> Working hours</strong></p>
-            <p><span>Monday-Thursday:</span> 11:00-22:00</p>
+            <p><span>Monday-Thursday:</span> 10:00-22:00</p>
             <p><span>Friday:</span> 10:00-24:00</p>
-            <p><span>Saturday:</span> 10:00-24:00</p>
+            <p><span>Saturday:</span> 11:00-24:00</p>
             <p><span>Sunday:</span> Closed</p>
         </div>
         </div>
         <div class="col-md-5">
+            <br>
+            <br>
+            <br>
             <img class="featurette-image img-fluid mx-auto" data-src="restaurantlogo.png/500x500/auto" alt="500x500"
-            style="width: 500px; height: 500px;" src="images/restaurantlogo.png" data-holder-rendered="true">
+            style="width: 200px; height: 200px;" src="images/restaurantlogo.png" data-holder-rendered="true">
         </div>
     </div>
 @endsection

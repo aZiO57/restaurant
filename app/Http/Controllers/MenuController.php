@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Menu;
 use Illuminate\Http\Request;
 
 class MenuController extends Controller
@@ -13,7 +14,7 @@ class MenuController extends Controller
      */
     public function index()
     {
-        //
+        return view('menu.list');
     }
 
     /**
@@ -23,7 +24,8 @@ class MenuController extends Controller
      */
     public function create()
     {
-        //
+        $data['menus'] = Menu::all();
+        return view('menu.create', $data);
     }
 
     /**
@@ -34,7 +36,16 @@ class MenuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $menu = new Menu();
+        $menu->name = $request->post('name');
+        $menu->price = $request->post('price');
+        $menu->description = $request->post('description');
+        $menu->image = $request->post('image');
+        $menu->category_id = 1; //$request->post('category_id');
+        $menu->enable = $request->post('enable');
+
+        $menu->save();
+        return redirect()->route('menu');
     }
 
     /**
