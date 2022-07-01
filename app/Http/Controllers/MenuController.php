@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Menu;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Auth;
 
 class MenuController extends Controller
 {
@@ -14,7 +17,10 @@ class MenuController extends Controller
      */
     public function index()
     {
-        return view('menu.list');
+
+        $data['menus'] = Menu::paginate(42);
+        $data['categories'] = Category::all();
+        return view('menu.list', $data);
     }
 
     /**
@@ -22,9 +28,10 @@ class MenuController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         $data['menus'] = Menu::all();
+        $data['categories'] = Category::all();
         return view('menu.create', $data);
     }
 
@@ -40,12 +47,13 @@ class MenuController extends Controller
         $menu->name = $request->post('name');
         $menu->price = $request->post('price');
         $menu->description = $request->post('description');
-        $menu->image = $request->post('image');
-        $menu->category_id = 1; //$request->post('category_id');
+        $path = $request->file('image')->store('public/images');
+        $menu->image = $path;
+        $menu->category_id = $request->post('category_id');
         $menu->enable = $request->post('enable');
 
         $menu->save();
-        return redirect()->route('menu');
+        return redirect()->route('menu.index');
     }
 
     /**

@@ -1,28 +1,23 @@
 @extends('layouts.app')
 @section('content')
-    <div id="content-wrap">
-        <br>
-        <br>
-        <br>
-        <br>
+    <div id="content-wrap" class="content">
         <div class="page-title-wrap">
-            <h1 class="page-title" data-max-size="30" data-min-size="25" style="font-size: 30px;">ABOUT US</h1>
+            <h1 class="aboutUs-title" style="text-align:center" data-max-size="30" data-min-size="25" style="font-size: 35px;">
+                ABOUT US</h1>
         </div>
+        <br>
         <div class="page-cb-wrap">
             <div class="content-boxes-wrap" style="margin: calc(24px - 0px)">
                 <div class="content-boxes isotope" style="position: relative; height: 936px;">
                     <div class="grid-sizer"></div>
                     <div class="container-fluid">
                         <div class="row">
-                          <div class="col-xl-6 col-lg-6 col-md-6" style="border:0px solid #ddd">
-                            <img src="./images/restaurantpicture.jpg" alt="restaurant picture" class="img-fluid" style="width:900px;height:500px;
-                    <div class="isotope-box one-half defined square text-color-dark use-defined-height content-content-box content-box content-box-2343 centered-content"
-                        style="position: absolute; left: 49.973%; top: 0px;">
-                        <div class="content-box-inner" style="margin:0px;  " data-margin="0">
-                            <div class="contentboxbgcolor" style="background-color:#ffffff;"></div>
-                            <div class="contentbox-content text-align-left"
-                                style="padding-top:48px; padding-bottom:48px; padding-left:48px; padding-right:48px;"
-                                data-padding="48">
+                            <div class="col-xl-6 col-lg-6 col-md-6">
+                                <img src="./images/restaurantpicture.jpg" alt="restaurant picture" class="img-fluid"
+                                    style="width:800px;height:500px;">
+							</div>
+						<div class="col-xl-6 col-lg-6
+                                    col-md-6">
                                 <h2 class="content-box-title contentbox-title-medium">RESTAURANT</h2>
                                 <div class="slide-description">Restaurant has been established in 1980 on the coast of
                                     Klaipeda.</div>
@@ -62,7 +57,4 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-@endsection
+            @endsection

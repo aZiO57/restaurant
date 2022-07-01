@@ -1,1 +1,5 @@
 @import '~jquery-ui/themes/base/all.css';
+
+.content{
+    margin-top: 105px;
+}

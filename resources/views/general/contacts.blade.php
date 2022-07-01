@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="row featurette">
+    <div class="row featurette content">
         <div class="page-title-wrap">
         <h1 class="page-title" data-max-size="36" data-min-size="25" style="font-size: 36px;">Contacts</h1>
             </div>
