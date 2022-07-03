@@ -1,9 +1,10 @@
 import './bootstrap';
 
-// added datepicker
-import $ from 'jquery';
-window.$ = window.jQuery = $;
-
-import 'jquery-ui/ui/widgets/datepicker.js';
-
-$('.datepicker').datepicker();
+function show() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }

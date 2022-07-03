@@ -15,7 +15,7 @@ class FeedbackController extends Controller
      */
     public function index()
     {
-        //
+        $data['feedback'] = Feedback::all();
     }
 
     /**
@@ -40,7 +40,6 @@ class FeedbackController extends Controller
         $feedback = new Feedback();
         $feedback->name = $request->post('name');
         $feedback->message = $request->post('message');
-        $feedback->rating = $request->post('rating');
 
         $feedback->save();
         return redirect()->route('home');
@@ -89,8 +88,8 @@ class FeedbackController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Feedback $feedback)
     {
-        // TO DO feedback delete
+        $feedback->delete();
     }
 }

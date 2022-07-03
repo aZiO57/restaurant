@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->longText('message');
-            $table->smallInteger('rating');
             $table->timestamps();
         });
     }

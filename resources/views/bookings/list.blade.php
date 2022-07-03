@@ -15,6 +15,12 @@
                             <a class="btn btn-primary float-end" href="{{route('booking.show',$booking->id)}}">
                                 Read more
                             </a>
+                            <a class="btn btn-primary float-end" href="{{route('booking.edit',$booking->id)}}">
+                                Edit
+                            </a>
+                            <a class="btn btn-primary float-end" href="{{route('booking.destroy',$booking->id)}}">
+                                Delete
+                            </a>
                         </div>
                     </div>
                 </div>

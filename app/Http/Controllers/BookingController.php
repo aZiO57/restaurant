@@ -10,6 +10,11 @@ use Illuminate\Http\Request;
 
 class BookingController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['only' => ['show', 'destroy', 'index']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +22,7 @@ class BookingController extends Controller
      */
     public function index()
     {
-        $data['bookings'] = Booking::paginate(42);
+        $data['bookings'] = Booking::paginate(10);
 
         return view('bookings.list', $data);
     }
@@ -105,8 +110,8 @@ class BookingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Booking $booking)
     {
-        //
+        $booking->delete();
     }
 }

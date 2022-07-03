@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Auth;
 
 class MenuController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['only' => ['create', 'store', 'edit']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +22,6 @@ class MenuController extends Controller
      */
     public function index()
     {
-
         $data['menus'] = Menu::paginate(42);
         $data['categories'] = Category::all();
         return view('menu.list', $data);
@@ -73,9 +77,12 @@ class MenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Menu $menu)
     {
-        //
+        $data['categories'] = Category::all();
+        $data['menus'] = $menu;
+
+        return view('menu.edit', $data);
     }
 
     /**
