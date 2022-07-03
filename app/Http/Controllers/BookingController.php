@@ -88,13 +88,12 @@ class BookingController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\UpdateBookingRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateBookingRequest $request, int $id)
     {
-        dd($request);
         $booking = Booking::find($id);
         $booking->name = $request->post('name');
         $booking->date = $request->post('date');

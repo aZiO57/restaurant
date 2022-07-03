@@ -24,6 +24,7 @@ Auth::routes(['register' => false,]);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 Route::get('/booking', [App\Http\Controllers\BookingController::class, 'index'])->name('booking');
+
 Route::get('/feedback', [App\Http\Controllers\FeedbackController::class, 'index'])->name('feedback');
 
 Route::resource('/booking', 'App\Http\Controllers\BookingController');

@@ -15,7 +15,9 @@ class FeedbackController extends Controller
      */
     public function index()
     {
-        $data['feedback'] = Feedback::all();
+        $data['feedback'] = Feedback::paginate(5);
+
+        return view('general.feedbackList', $data);
     }
 
     /**
@@ -67,9 +69,9 @@ class FeedbackController extends Controller
      */
     public function destroy($id)
     {
-        $user = Feedback::find($id);
+        $feedback = Feedback::find($id);
 
-        $user->delete();
+        $feedback->delete();
         return redirect()->route('feedback');
     }
 }

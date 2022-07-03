@@ -2,8 +2,9 @@
 
 namespace App\Policies;
 
-use App\Models\Booking;
 use App\Models\User;
+use App\Models\Booking;
+use Illuminate\Auth\Access\Response;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class BookingPolicy
@@ -53,7 +54,7 @@ class BookingPolicy
      */
     public function update(User $user, Booking $booking)
     {
-        //
+        Response::allow();
     }
 
     /**

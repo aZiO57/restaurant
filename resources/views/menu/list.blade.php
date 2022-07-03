@@ -10,7 +10,7 @@
                         <div class="col-md-4">
                             <div class="card">
                                 <div class="card-header">{{ $menu->name }}</div>
-                                <img src="/images/{{ $menu->image }} " style="width:400px;height:200px;">
+                                <img src="/images/{{ $menu->image }} " style="width:414px;height:auto;">
                                 <div class="card-body">
                                     <div>{{ $menu->price }}€</b></div>
                                     <div>{{ $menu->description }}</div>
