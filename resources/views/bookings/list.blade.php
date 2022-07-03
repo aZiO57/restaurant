@@ -2,25 +2,26 @@
 
 @section('content')
     <div class="container content">
+        <br>
         <div class="row justify-content-center">
-            @foreach($bookings as $booking)
+            @foreach ($bookings as $booking)
                 <div class="col-md-12">
                     <div class="card">
-                        <div class="card-header">{{ $booking->name}}</div>
-                        <div class="card-header">{{ $booking->date}}</div>
-                        <div class="card-header">{{ $booking->email}}</div>
-                        <div class="card-header">{{ $booking->table->name}}</div>
+                        <div class="card-header">Name:{{ $booking->name }}</div>
+                        <div class="card-header">Booked for: {{ $booking->date }}</div>
+                        <div class="card-header">Email: {{ $booking->email }}</div>
+                        <div class="card-header">{{ $booking->table->name }}</div>
+                        <div class="card-header">Comment: {{ $booking->comment }}</div>
 
                         <div class="card-footer">
-                            <a class="btn btn-primary float-end" href="{{route('booking.show',$booking->id)}}">
+                            <a class="btn btn-primary float-end" href="{{ route('booking.show', $booking->id) }}">
                                 Read more
                             </a>
-                            <a class="btn btn-primary float-end" href="{{route('booking.edit',$booking->id)}}">
+                            <a class="btn btn-primary float-end" href="{{ route('booking.edit', $booking->id) }}">
                                 Edit
                             </a>
-                            <a class="btn btn-primary float-end" href="{{route('booking.destroy',$booking->id)}}">
-                                Delete
-                            </a>
+                            <form action="{{ route('booking.destroy', $booking->id) }}" method="POST"> @csrf
+                                @method('DELETE') <button class="btn btn-danger float-end" type="submit">Delete</button> </form>
                         </div>
                     </div>
                 </div>

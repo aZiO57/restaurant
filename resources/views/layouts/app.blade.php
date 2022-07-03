@@ -49,14 +49,16 @@
                                     href="/feedback/create">Leave feedback</a></li>
                         </ul>
                     @else
-                        <li class="nav-item mx-0 mx-lg-2"><a class="nav-link py-3 px-0 px-lg-1 rounded"
-                                href="/menu/">Menu</a></li>
+                        <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-1 rounded"
+                                href="/menu">Menu</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-1 rounded"
                                 href="/menu/create">Create menu</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-1 rounded"
-                                href="/feedback/show">Feedback list</a></li>
+                                href="/feedback">Feedback list</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-1 rounded"
                                 href="/booking">Bookings</a></li>
+                        </ul>
                     @endguest
                 </div>
                 </li>

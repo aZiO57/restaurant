@@ -12,7 +12,7 @@ class BookingController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth', ['only' => ['show', 'destroy', 'index']]);
+        $this->middleware('auth', ['only' => ['show', 'destroy', 'index', 'update', 'edit']]);
     }
 
     /**
@@ -80,7 +80,9 @@ class BookingController extends Controller
      */
     public function edit(Booking $booking)
     {
-        //
+        $data['booking'] = $booking;
+        $data['tables'] = Table::all();
+        return view('bookings.edit', $data);
     }
 
     /**
@@ -90,8 +92,10 @@ class BookingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateBookingRequest $request, Booking $booking)
+    public function update(UpdateBookingRequest $request, int $id)
     {
+        dd($request);
+        $booking = Booking::find($id);
         $booking->name = $request->post('name');
         $booking->date = $request->post('date');
         $booking->time = $request->post('time');
@@ -101,7 +105,7 @@ class BookingController extends Controller
         $booking->table_id = $request->post('table_id');
 
         $booking->save();
-        return redirect()->route('home');
+        return redirect()->route('booking.index');
     }
 
     /**
@@ -110,8 +114,11 @@ class BookingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Booking $booking)
+    public function destroy($id)
     {
+        $booking = Booking::find($id);
+
         $booking->delete();
+        return redirect()->route('booking.index');
     }
 }
