@@ -13,7 +13,7 @@ class MenuController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth', ['only' => ['create', 'store', 'edit']]);
+        $this->middleware('auth', ['only' => ['create', 'store', 'edit', 'update', 'destroy']]);
     }
 
     /**
@@ -55,7 +55,6 @@ class MenuController extends Controller
         $path = $request->file('image')->store('public/images');
         $menu->image = $path;
         $menu->category_id = $request->post('category_id');
-        $menu->enable = $request->post('enable');
 
         $menu->save();
         return redirect()->route('menu.index');
@@ -103,10 +102,9 @@ class MenuController extends Controller
         $menu->description = $request->post('description');
         $menu->image = $request->post('image');
         $menu->category_id = $request->post('category_id');
-        $menu->enable = $request->post('enable');
 
         $menu->save();
-        return redirect()->route('menu.menuListing');
+        return redirect()->route('menu.index');
     }
 
     /**
@@ -120,6 +118,6 @@ class MenuController extends Controller
         $menu = Menu::find($id);
 
         $menu->delete();
-        return redirect()->route('menu.menuListing');
+        return redirect()->route('menu.index');
     }
 }

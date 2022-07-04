@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class FeedbackController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['only' => ['index', 'show', 'destroy', 'index', 'update', 'edit']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -72,6 +77,6 @@ class FeedbackController extends Controller
         $feedback = Feedback::find($id);
 
         $feedback->delete();
-        return redirect()->route('feedback');
+        return redirect()->route('feedback.index');
     }
 }

@@ -24,7 +24,7 @@
                                 <textarea name="description" class="form-control" placeholder="Description">{{ $menu->description }}</textarea>
                                 <form action="/action_page.php">
                                     <label for="img">Select image:</label>
-                                    <input value="{{ $menu->image }}"type="file" id="img" name="image" accept="image/*" required>
+                                    <input type="file" id="img" name="image" accept="image/*" required>
                                 </form>
                                 <select name="category_id" class="form-control" required>
                                     <option>Category</option>
@@ -37,14 +37,6 @@
 
                                     @endforeach
                                 </select>
-                                <br>
-                                <select name="enable" required>
-                                    <option value="">Select action</option>
-                                    <option value="1">Show item</option>
-                                    <option value="0">Hide item</option>
-                                </select>
-                                <br>
-                                <br>
                                 <input type="submit" value="Edit menu item" class="btn btn-outline-primary">
                             </div>
                         </form>

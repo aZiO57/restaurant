@@ -31,14 +31,6 @@
                                         <option value="{{$category->id}}">{{$category->title}}</option>
                                     @endforeach
                                 </select>
-                                <br>
-                                <select name="enable" required>
-                                    <option value="">Select action</option>
-                                    <option value="1">Show item</option>
-                                    <option value="0">Hide item</option>
-                                </select>
-                                <br>
-                                <br>
                                 <input type="submit" value="Submit menu item" class="btn btn-outline-primary">
                             </div>
                         </form>

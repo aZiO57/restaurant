@@ -20,7 +20,6 @@ return new class extends Migration
             $table->longText('description');
             $table->string('image')->nullable();
             $table->integer('category_id');
-            $table->boolean('enable')->default(1);
             $table->timestamps();
         });
     }

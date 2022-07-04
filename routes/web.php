@@ -33,3 +33,4 @@ Route::resource('/table', 'App\Http\Controllers\TableController');
 Route::resource('/about', 'App\Http\Controllers\AboutController');
 Route::resource('/feedback', 'App\Http\Controllers\FeedbackController');
 Route::resource('/contacts', 'App\Http\Controllers\ContactController');
+
