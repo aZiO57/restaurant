@@ -100,7 +100,10 @@ class MenuController extends Controller
         $menu->name = $request->post('name');
         $menu->price = $request->post('price');
         $menu->description = $request->post('description');
-        $menu->image = $request->post('image');
+        if (!empty($request->file('image'))) {
+            $path = $request->file('image')->store('public/images');
+            $menu->image = $path;
+        }
         $menu->category_id = $request->post('category_id');
 
         $menu->save();

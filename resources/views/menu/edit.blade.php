@@ -22,10 +22,8 @@
                                 <input value="{{ $menu->name }}"type="text" name="name" class="form-control" placeholder="Name of dish" required>
                                 <input value="{{ $menu->price }}"type="text" name="price" class="form-control" placeholder="Price in €" required>
                                 <textarea name="description" class="form-control" placeholder="Description">{{ $menu->description }}</textarea>
-                                <form action="/action_page.php">
                                     <label for="img">Select image:</label>
-                                    <input type="file" id="img" name="image" accept="image/*" required>
-                                </form>
+                                    <input type="file" id="img" name="image" accept="image/*" >
                                 <select name="category_id" class="form-control" required>
                                     <option>Category</option>
                                     @foreach($categories as $category)

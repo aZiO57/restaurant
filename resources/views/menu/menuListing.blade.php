@@ -10,6 +10,7 @@
                         <div class="col-md-12">
                             <ul class="list-group">
                                 <li class="list-group-item"><b>{{ $menu->name }}</li>
+                                <img src="/images/{{ $menu->image }} " style="width:100px;height:auto;">
                             </ul>
                             <div class="card">
                                 <div class="card-footer">
