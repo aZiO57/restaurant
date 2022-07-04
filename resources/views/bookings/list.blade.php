@@ -7,7 +7,7 @@
             @foreach ($bookings as $booking)
                 <div class="col-md-12">
                     <div class="card">
-                        <div class="card-header">Name:{{ $booking->name }}</div>
+                        <div class="card-header">Name: {{ $booking->name }}</div>
                         <div class="card-header">Booked for: {{ $booking->date }}</div>
                         <div class="card-header">Email: {{ $booking->email }}</div>
                         <div class="card-header">{{ $booking->table->name }}</div>

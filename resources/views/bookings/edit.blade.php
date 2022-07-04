@@ -13,7 +13,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Table booking') }}</div>
+                    <div class="card-header">{{ ('Edit of booking reservation:') }} {{ $booking->id }}</div>
                     <div class="card-body">
                         <form class="form" method="post" action="{{ route('booking.update', $booking->id) }}">
                             @csrf
@@ -21,12 +21,12 @@
                             <div class="form-group">
                                 <input value="{{ $booking->name }}" type="text" name="name" class="form-control"
                                     placeholder="First name" required>
-                                <label for="appt">Choose a date for your booking</label>
+                                <label for="appt">Change date of booking</label>
                                 <br>
                                 <input value="{{ $booking->date }}" type="date" name="date"
                                     min="{{ date('Y-m-d') }}" required />
                                 <br>
-                                <label for="appt">Choose a time for your booking</label>
+                                <label for="appt">Change time of booking</label>
                                 <br>
                                 <input value="{{ $booking->time }}" type="time" name="time" min="10:00"
                                     max="22:00" required>
