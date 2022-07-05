@@ -3,7 +3,7 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card content">
-                <div class="card-header">{{ __('Feedback') }}</div>
+                <div class="card-header bg-primary">{{ __('Feedback') }}</div>
                 <div class="card-body">
                     <form class="form" method="post" action="{{ route('feedback.store') }}">
                         @csrf

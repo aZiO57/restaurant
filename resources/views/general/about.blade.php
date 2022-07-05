@@ -14,9 +14,9 @@
                         <div class="row">
                             <div class="col-xl-6 col-lg-6 col-md-6">
                                 <img src="./images/restaurantpicture.jpg" alt="restaurant picture" class="img-fluid"
-                                    style="width:800px;height:500px;">
-							</div>
-						<div class="col-xl-6 col-lg-6
+                                    style="width:800px;height:520px;">
+                            </div>
+                            <div class="col-xl-6 col-lg-6
                                     col-md-6">
                                 <h2 class="content-box-title contentbox-title-medium">RESTAURANT</h2>
                                 <div class="slide-description">Restaurant has been established in 1980 on the coast of

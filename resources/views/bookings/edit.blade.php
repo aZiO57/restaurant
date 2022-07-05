@@ -13,7 +13,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ ('Edit of booking reservation:') }} {{ $booking->id }}</div>
+                    <div class="card-header">{{ 'Edit of booking reservation:' }} {{ $booking->id }}</div>
                     <div class="card-body">
                         <form class="form" method="post" action="{{ route('booking.update', $booking->id) }}">
                             @csrf

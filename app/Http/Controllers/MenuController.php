@@ -23,7 +23,7 @@ class MenuController extends Controller
      */
     public function index()
     {
-        $data['menus'] = Menu::paginate(42);
+        $data['menus'] = Menu::orderBy('price', 'asc')->get();
         $data['categories'] = Category::all();
         return view('menu.list', $data);
     }

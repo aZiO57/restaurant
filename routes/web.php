@@ -19,7 +19,7 @@ use App\Http\Controllers\BookingController;
 //     return view('welcome');
 // });
 
-Auth::routes(['register' => false,]);
+Auth::routes(['register' => false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
@@ -33,4 +33,3 @@ Route::resource('/table', 'App\Http\Controllers\TableController');
 Route::resource('/about', 'App\Http\Controllers\AboutController');
 Route::resource('/feedback', 'App\Http\Controllers\FeedbackController');
 Route::resource('/contacts', 'App\Http\Controllers\ContactController');
-

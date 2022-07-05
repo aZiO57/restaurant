@@ -23,7 +23,6 @@
         <div class="carousel-inner">
             <!--/.Indicators-->
 
-            <!--First slide-->
             @for ($i = 0; $i < 3; $i++)
                 <div class="carousel-item {{ $i === 0 ? 'active' : '' }}">
 
@@ -32,7 +31,7 @@
                             <div class="col-md-4 clearfix d-none d-md-block">
                                 <div class="card mb-2">
                                     <img class="card-img-top"
-                                        src="https://i.pravatar.cc/160?u=b{{ $feedback[3 * $i + $j]->id }}.svg"
+                                        src="https://i.pravatar.cc/160?u=dk{{ $feedback[3 * $i + $j]->id }}.svg"
                                         width="160" height="140" margin-left="205" alt="Card image cap">
                                     <div class="card-body">
                                         <h4 class="card-title">{{ $feedback[3 * $i + $j]->name }}</h4>

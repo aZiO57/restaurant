@@ -11,7 +11,8 @@
                         <div class="card-header">Message: {{ $item->message }}</div>
                         <div class="card-footer">
                             <form action="{{ route('feedback.destroy', $item->id) }}" method="POST"> @csrf
-                                @method('DELETE') <button class="btn btn-danger float-end" type="submit">Delete</button> </form>
+                                @method('DELETE') <button class="btn btn-danger float-end" type="submit">Delete</button>
+                            </form>
                         </div>
                     </div>
                 </div>

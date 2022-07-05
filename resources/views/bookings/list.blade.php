@@ -9,9 +9,7 @@
                     <div class="card">
                         <div class="card-header">Name: {{ $booking->name }}</div>
                         <div class="card-header">Booked for: {{ $booking->date }}</div>
-                        <div class="card-header">Email: {{ $booking->email }}</div>
                         <div class="card-header">{{ $booking->table->name }}</div>
-                        <div class="card-header">Comment: {{ $booking->comment }}</div>
 
                         <div class="card-footer">
                             <a class="btn btn-primary float-end" href="{{ route('booking.show', $booking->id) }}">
@@ -21,7 +19,8 @@
                                 Edit
                             </a>
                             <form action="{{ route('booking.destroy', $booking->id) }}" method="POST"> @csrf
-                                @method('DELETE') <button class="btn btn-danger float-end" type="submit">Delete</button> </form>
+                                @method('DELETE') <button class="btn btn-danger float-end" type="submit">Delete</button>
+                            </form>
                         </div>
                     </div>
                 </div>
